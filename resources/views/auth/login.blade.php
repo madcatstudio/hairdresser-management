@@ -17,6 +17,18 @@
   <!-- iCheck -->
   <link rel="stylesheet" href="{{ asset('/plugins/iCheck/square/blue.css') }}">
 
+<style>
+  body {
+    height: 100%;
+    background-color: #333;
+    background-image: url('/img/ohana-back.jpg');
+    background-size: cover;
+  }
+  .login-logo a, .register-logo a {
+    color: #FFF;
+  }
+</style>
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -24,7 +36,7 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<body class="hold-transition login-page">
+<body class="hold-transition">
 <div class="login-box">
   <div class="login-logo">
     <a href="/"><b>OHANA</b>Salon</a>
@@ -43,7 +55,7 @@
         {{ csrf_field() }}
         <div class="form-group has-feedback">
             <input id="number"  class="form-control" name="number" type="text" placeholder="Client Number" value="{{ old('number') }}" required autofocus>
-            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
 
             @if ($errors->has('number'))
                 <span class="help-block">
@@ -76,8 +88,8 @@
       </div>
     </form>
 
-    <a href="{{ url('/password/reset') }}">I forgot my password</a><br>
-    <a href="{{ url('/register') }}" class="text-center">Register a new membership</a>
+    <!-- <a href="{{ url('/password/reset') }}">I forgot my password</a><br> -->
+    <!-- <a href="{{ url('/register') }}" class="text-center">Register a new membership</a> -->
 
   </div>
   <!-- /.login-box-body -->

@@ -9,10 +9,11 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Ohana Salon Manager</title>
+    <title>OHANA Salon Manager</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('/dist/css/AdminLTE.min.css') }}">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="{{ asset('/assets/css/ie10-viewport-bug-workaround.css') }}" rel="stylesheet">
@@ -49,7 +50,7 @@ html,
 body {
   height: 100%;
   background-color: #333;
-  background-image: url('img/ohana-back.jpg');
+  background-image: url('/img/ohana-back.jpg');
   background-size: cover;
 }
 body {
@@ -206,14 +207,14 @@ body {
 
           <div class="masthead clearfix">
             <div class="inner">
-              <h3 class="masthead-brand">OHANA Salon</h3>
+              <h3 class="masthead-brand"><b>OHANA</b>Salon</h3>
               <nav>
                 <ul class="nav masthead-nav">
                     @if (Auth::check())
                         <li><a href="{{ url('/home') }}">Home</a></li>
                     @else
-                        <li><a href="{{ url('/login') }}">Login</a></li>
-                        <li><a href="{{ url('/register') }}">Register</a></li>
+                        <!-- <li><a href="{{ url('/login') }}">Login</a></li> -->
+                        <!-- <li><a href="{{ url('/register') }}">Register</a></li> -->
                     @endif
                 </ul>
               </nav>
