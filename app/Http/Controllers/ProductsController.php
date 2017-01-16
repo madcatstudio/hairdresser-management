@@ -91,11 +91,10 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function delete($id)
+    public function delete(Request $request)
     {
 
-        $product = Product::findOrFail($id);
-
+        $product = Product::findOrFail($request->product_id);
         $product->delete();
 
         return redirect('/products')->with('status', 'Product deleted.'); 

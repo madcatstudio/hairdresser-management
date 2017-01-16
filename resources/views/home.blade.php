@@ -1,7 +1,7 @@
 @extends('layouts.client')
 
-@section('page-title', 'Profile')
-@section('page-description', 'User Profile, Treatments and Purchases')
+@section('page-title', 'User Profile')
+@section('page-description', 'User Treatments and Purchases')
 
 @section('breadcrumb')
     <li class="active">{{ Auth::user()->name }}</li>
@@ -9,136 +9,105 @@
 
 @section('content')
 <div class="row">
-  <div class="col-md-3">
+    <div class="col-md-12">
+        <!-- Profile Image -->
+        <div class="box box-primary">
+            <div class="box-body box-profile">
+                <!-- <img class="profile-user-img img-responsive img-circle" src="{{ asset('/dist/img') }}/{{ Auth::User()->avatar }}" alt="User profile picture"> -->
 
-      <!-- Profile Image -->
-      <div class="box box-primary">
-        <div class="box-body box-profile">
-          <img class="profile-user-img img-responsive img-circle" src="{{ asset('/dist/img') }}/{{ Auth::User()->avatar }}" alt="User profile picture">
+                <h1 class="text-center">{{ Auth::user()->name }}</h1>
 
-          <h3 class="profile-username text-center">{{ Auth::user()->name }}</h3>
+                <p class="text-muted text-center">n°{{ Auth::user()->number }}</p>
 
-          <p class="text-muted text-center">n°{{ Auth::user()->number }}</p>
-
-          <ul class="list-group list-group-unbordered">
-            <li class="list-group-item">
-              <b>Birthdate</b> <a class="pull-right">{{ Auth::user()->birthdate->format('d/m/Y') }}</a>
-            </li>
-            <li class="list-group-item">
-              <b>Age</b> <a class="pull-right">{{ Auth::user()->birthdate->diffInYears(Carbon\Carbon::now()) }}</a>
-            </li>
-            <li class="list-group-item">
-              <b>Phone</b> <a class="pull-right">{{ Auth::user()->phone }}</a>
-            </li>
-            <li class="list-group-item">
-              <b>Email</b> <a class="pull-right">{{ Auth::user()->email }}</a>
-            </li>
-          </ul>
+                <ul class="list-group list-group-unbordered">
+                    <li class="list-group-item">
+                      <b>Birthdate</b> <span class="pull-right">{{ Auth::user()->birthdate->format('d/m/Y') }}</span>
+                    </li>
+                    <li class="list-group-item">
+                      <b>Age</b> <span class="pull-right">{{ Auth::user()->birthdate->diffInYears(Carbon\Carbon::now()) }}</span>
+                    </li>
+                    <li class="list-group-item">
+                      <b>Phone</b> <span class="pull-right">{{ Auth::user()->phone }}</span>
+                    </li>
+                    <li class="list-group-item">
+                      <b>Email</b> <span class="pull-right">{{ Auth::user()->email }}</span>
+                    </li>
+              </ul>
+            </div>
+            <!-- /.box-body -->
         </div>
-        <!-- /.box-body -->
-      </div>
-      <!-- /.box -->
-      <!-- /.box -->
+        <!-- /.box -->
     </div>
-    <!-- /.col -->
-    <div class="col-md-9">
-      <div class="nav-tabs-custom">
-        <ul class="nav nav-tabs">
-          <li class="active"><a href="#treatments" data-toggle="tab">Treatments</a></li>
-          <li><a href="#purchases" data-toggle="tab">Purchases</a></li>
-        </ul>
-        <div class="tab-content">
+</div>
 
-          @if (session('status'))
+<div class="row">
+    <div class="col-md-12">
+        @if (session('status'))
             <div class="alert alert-success alert-dismissible" role="alert">
               <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                {{ session('status') }}
+              {{ session('status') }}
             </div>
-          @endif
-          @if (count($errors) > 0)
-              <div class="alert alert-danger">
-                  <ul>
-                      @foreach ($errors->all() as $error)
-                          <li>{{ $error }}</li>
-                      @endforeach
-                  </ul>
-              </div>
-          @endif
-
-            <div class="active tab-pane" id="treatments">
-                <div class="box">
-                    <div class="box-body">
-                        <table id="client-treatments" class="table table-bordered table-striped">
-                            <thead>
-                                <tr>
-                                    <th style="width: 60px">Date</th>
-                                    <th>Services</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            @foreach(Auth::user()->treatments as $treatment)
-                            <tr>
-                                <th>{{ $treatment->date->format('d M Y') }}</th>
-                                <th>
-                                    <ul>
-                                    @foreach($treatment->services as $service)
-                                        <li>{{ $service->name }}</li>
-                                    @endforeach
-                                    </ul>
-                                </th>
-                            </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+        @endif
+        @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
             </div>
-            <!-- /.tab-pane -->
-            <div class="tab-pane" id="purchases">
-                <div class="box">
-                    <div class="box-body">
-                        <table id="client-purchases" class="table table-bordered table-striped">
-                            <thead>
-                                <tr>
-                                    <th style="width: 60px">Date</th>
-                                    <th>Products</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            @foreach(Auth::user()->purchases as $purchase)
-                            <tr>
-                                <th>{{ $purchase->date->format('d M Y') }}</th>
-                                <th>
-                                    <ul>
-                                    @foreach($purchase->products as $product)
-                                        <li>{{ $product->name }}</li>
-                                    @endforeach
-                                    </ul>
-                                </th>
-                            </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+        @endif
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="box">
+            <div class="box-header with-border">
+                <h3>Treatments</h3>
             </div>
-          <!-- /.tab-pane -->
+            <div class="box-body">
+                <ul class="list-unstyled">
+                    @foreach(Auth::user()->treatments as $treatment)
+                        <li>
+                            <b>{{ $treatment->date->format('d M Y') }}</b>
+                            <div>
+                                <ul>
+                                @foreach($treatment->services as $service)
+                                    <li>{{ $service->name }}</li>
+                                @endforeach
+                                </ul>
+                            </div>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
         </div>
-        <!-- /.tab-content -->
-      </div>
-      <!-- /.nav-tabs-custom -->
     </div>
-    <!-- /.col -->
+
+    <div class="col-md-6">
+        <div class="box">
+            <div class="box-header with-border">
+              <h3>Purchases</h3>
+            </div>
+
+            <div class="box-body">
+                <ul class="list-unstyled">
+                    @foreach(Auth::user()->purchases as $purchase)
+                        <li>
+                            <b>{{ $purchase->date->format('d M Y') }}</b>
+
+                            <div>
+                                <ul>
+                                @foreach($purchase->products as $product)
+                                    <li>{{ $product->name }} <small>{{ $product->company->name }}</small></li>
+                                @endforeach
+                                </ul>
+                            </div>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
     </div>
-    <!-- /.row -->
-
-@endsection
-
-@section('scripts')
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#client-treatments').DataTable();
-            $('#client-purchases').DataTable();
-        } );
-    </script>
+</div>
 @endsection

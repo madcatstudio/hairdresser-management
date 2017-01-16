@@ -30,24 +30,24 @@ Route::get('/companies', 'CompaniesController@index');
 Route::get('/companies/create', 'CompaniesController@create');
 Route::post('/companies/create', 'CompaniesController@store');
 Route::post('/companies/{id}/edit', 'CompaniesController@update');
-Route::get('/companies/{id}/delete', 'CompaniesController@delete');
 Route::get('/companies/{id}', 'CompaniesController@show');
+// Route::post('/companies/delete', 'CompaniesController@delete');
 
 // Services Routes
 Route::get('/services', 'ServicesController@index');
 Route::get('/services/create', 'ServicesController@create');
 Route::post('/services/create', 'ServicesController@store');
 Route::post('/services/{id}/edit', 'ServicesController@update');
-Route::get('/services/{id}/delete', 'ServicesController@delete');
 Route::get('/services/{id}', 'ServicesController@show');
+// Route::post('/services/delete', 'ServicesController@delete');
 
 // Products Routes
 Route::get('/products', 'ProductsController@index');
 Route::get('/products/create', 'ProductsController@create');
 Route::post('/products/create', 'ProductsController@store');
 Route::post('/products/{id}/edit', 'ProductsController@update');
-Route::get('/products/{id}/delete', 'ProductsController@delete');
 Route::get('/products/{id}', 'ProductsController@show');
+// Route::post('/products/delete', 'ProductsController@delete');
 
 // Treatments Routes
 Route::post('/treatment/edit', 'TreatmentsController@edit');

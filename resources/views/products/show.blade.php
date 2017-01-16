@@ -180,7 +180,6 @@
                         <div class="form-group">
                             <div class="col-sm-10 col-md-offset-2">
                                 <button type="submit" class="btn btn-primary">Update</button>
-                                <a href="/products/{{ $product->id }}/delete" class="btn btn-danger" role="button">Delete</a>
                             </div>
                         </div>
                     </form>

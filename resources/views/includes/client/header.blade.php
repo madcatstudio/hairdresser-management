@@ -47,10 +47,9 @@
                   <ul class="menu">
                     <li><!-- start message -->
                       <a href="#">
-                        <div class="pull-left">
-                          <!-- User Image -->
+                        <!-- <div class="pull-left">
                           <img src="{{ asset('/dist/img') }}/{{ Auth::User()->avatar }}" class="img-circle" alt="User Image">
-                        </div>
+                        </div> -->
                         <!-- Message title and timestamp -->
                         <h4>
                           Support Team
@@ -134,14 +133,14 @@
               <!-- Menu Toggle Button -->
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <!-- The user image in the navbar-->
-                <img src="{{ asset('/dist/img') }}/{{ Auth::User()->avatar }}" class="user-image" alt="User Image">
+                <!-- <img src="{{ asset('/dist/img') }}/{{ Auth::User()->avatar }}" class="user-image" alt="User Image"> -->
                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
                 <span class="hidden-xs">{{ Auth::User()->name }} ({{ Auth::user()->number }})</span>
               </a>
               <ul class="dropdown-menu">
                 <!-- The user image in the menu -->
                 <li class="user-header">
-                  <img src="{{ asset('/dist/img') }}/{{ Auth::User()->avatar }}" class="img-circle" alt="User Image">
+                  <!-- <img src="{{ asset('/dist/img') }}/{{ Auth::User()->avatar }}" class="img-circle" alt="User Image"> -->
 
                   <p>
                     {{ Auth::User()->name }} ({{ Auth::user()->number }})

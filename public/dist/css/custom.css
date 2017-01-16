@@ -1,0 +1,39 @@
+body {
+  font-family: 'Kalam', cursive; Helvetica, Arial, sans-serif;
+}
+
+/* H1 - H6 font */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: 'Dancing Script', cursive;
+}
+
+.box{
+	border-top: none;
+}
+
+.content-wrapper,
+.right-side {
+    background-color: #f6f3d9;
+    background-image: url('/img/ohana-back-manager.jpg');
+    background-size: cover;
+}
+
+@media (max-width: 991px) {
+  .content-header > .breadcrumb {
+    background: #ece0b7;
+  }
+  .content-header > .breadcrumb li:before {
+    color: #b79f6f;
+  }
+}

@@ -101,7 +101,6 @@
                         <div class="form-group">
                             <div class="col-sm-10 col-sm-offset-2">
                                 <button type="submit" class="btn btn-primary">Update</button>
-                                <a href="/services/{{ $service->id }}/delete" class="btn btn-danger" role="button">Delete</a>
                             </div>
                         </div>
                     </form>
