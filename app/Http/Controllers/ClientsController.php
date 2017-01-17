@@ -23,10 +23,22 @@ class ClientsController extends Controller
         $this->middleware('auth');
     }
 
+    public function getProductsCount()
+    {
+        return \App\Product::count();
+    }
+
+    public function getServicesCount()
+    {
+        return \App\Service::count();
+    }
+
     public function show($id)
     {
         $client = User::findOrFail($id);
-        return view('clients.show', compact('client'));
+        $products_count = $this->getProductsCount();
+        $services_count = $this->getServicesCount();
+        return view('clients.show', compact('client', 'products_count', 'services_count'));
     }
 
     /**
@@ -145,16 +157,20 @@ class ClientsController extends Controller
     {
         $client = User::findOrFail($id);
         $services = Service::all();
+        $products_count = $this->getProductsCount();
+        $services_count = $this->getServicesCount();
 
-        return view('treatments.create', compact('client', 'services'));
+        return view('treatments.create', compact('client', 'services', 'products_count', 'services_count'));
     }
 
     public function createPurchase($id)
     {
         $client = User::findOrFail($id);
         $products = Product::all();
+        $products_count = $this->getProductsCount();
+        $services_count = $this->getServicesCount();
 
-        return view('purchases.create', compact('client', 'products'));
+        return view('purchases.create', compact('client', 'products', 'products_count', 'services_count'));
     }
 
     /**

@@ -28,8 +28,20 @@
       @endif
     </ul>
 
-    <a href="{{ url('/clients') }}/{{ $client->id }}/create/treatment" class="btn bg-orange btn-block"><b>Add Treatment</b></a>
-    <a href="{{ url('/clients') }}/{{ $client->id }}/create/purchase" class="btn bg-maroon btn-block"><b>Add Purchase</b></a>
+    @if($services_count>0)
+      <a href="{{ url('/clients') }}/{{ $client->id }}/create/treatment"
+      class="btn bg-orange btn-block"><b>Add Treatment</b></a>
+    @else
+      <a class="btn bg-orange btn-block" disabled><b>Add Treatment</b></a>
+    @endif
+
+    @if($products_count>0)
+      <a href="{{ url('/clients') }}/{{ $client->id }}/create/purchase"
+      class="btn bg-maroon btn-block"><b>Add Purchase</b></a>
+    @else
+      <a class="btn bg-maroon btn-block" disabled><b>Add Purchase</b></a>
+    @endif
+
   </div>
   <!-- /.box-body -->
   </div>

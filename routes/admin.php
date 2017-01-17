@@ -14,8 +14,8 @@
 Route::get('/admin', function () {
 	$clients = App\User::doesntHave('roles')->count();
 	$companies = App\Company::count();
-	$products = App\Product::count();;
-	$services = App\Service::count();;
+	$products = App\Product::count();
+	$services = App\Service::count();
     return view('dashboard', compact('clients', 'companies', 'products', 'services'));
 });
 
