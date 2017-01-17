@@ -32,14 +32,14 @@ class DatabaseSeeder extends Seeder
         	'role_id' => '1',
         	'user_id' => '1',
         ]);
-        factory(App\User::class, 50)->create();
+        // factory(App\User::class, 50)->create();
 
-        App\Company::create(array('name' => 'Davines'));
-        App\Company::create(array('name' => 'Nika'));
+        // App\Company::create(array('name' => 'Davines'));
+        // App\Company::create(array('name' => 'Nika'));
 
-        App\Service::create(array('name' => 'Taglio'));
-        App\Service::create(array('name' => 'Colore'));
-        App\Service::create(array('name' => 'Piega'));
+        // App\Service::create(array('name' => 'Taglio'));
+        // App\Service::create(array('name' => 'Colore'));
+        // App\Service::create(array('name' => 'Piega'));
 
         // $this->call(UsersTableSeeder::class);
     }
