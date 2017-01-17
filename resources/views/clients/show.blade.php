@@ -44,7 +44,7 @@
                             <tr>
                                 <th>{{ $treatment->date->format('d M Y') }}</th>
                                 <th>
-                                    <ul>
+                                    <ul class="list-unstyled">
                                     @foreach($treatment->services as $service)
                                         <li>{{ $service->name }}</li>
                                     @endforeach
@@ -91,7 +91,7 @@
                             <tr>
                                 <th>{{ $purchase->date->format('d M Y') }}</th>
                                 <th>
-                                    <ul>
+                                    <ul class="list-unstyled">
                                     @foreach($purchase->products as $product)
                                         <li>{{ $product->name }} <small>({{ $product->company->name}})</small></li>
                                     @endforeach
