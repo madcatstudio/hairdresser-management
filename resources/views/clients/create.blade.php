@@ -99,20 +99,6 @@
                 </div>
             </div>
 
-            <div class="form-group{{ $errors->has('avatar') ? ' has-error' : '' }}">
-                <label for="avatar" class="col-sm-2 control-label">Avatar</label>
-
-                <div class="col-sm-10">
-                    <input id="avatar" type="file" class="form-control" name="avatar" >
-
-                    @if ($errors->has('avatar'))
-                        <span class="help-block">
-                            <strong>{{ $errors->first('avatar') }}</strong>
-                        </span>
-                    @endif
-                </div>
-            </div>
-
             <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                 <label for="password" class="col-sm-2 control-label">Password</label>
 
