@@ -47,8 +47,13 @@
                 <label for="birthdate" class="col-sm-2 control-label">Birthdate</label>
 
                 <div class="col-sm-10">
-                    <input id="birthdate" type="date" class="form-control" name="birthdate" value="{{ old('birthdate') }}" >
-
+                    <div class="input-group date" >
+                        <input id="birthdate" type="text" class="form-control datepicker" name="birthdate" value="{{ old('birthdate') }}" >
+                        <div class="input-group-addon">
+                            <span class="glyphicon glyphicon-th"></span>
+                        </div>
+                    </div>
+                    
                     @if ($errors->has('birthdate'))
                         <span class="help-block">
                             <strong>{{ $errors->first('birthdate') }}</strong>
@@ -127,4 +132,14 @@
         </div>
     </form>
 </div>
+@endsection
+
+@section('scripts')
+<script type="text/javascript">
+    $('.datepicker').datepicker({
+        format: 'dd/mm/yyyy',
+    });
+
+    CKEDITOR.replace('note');
+</script>
 @endsection

@@ -28,8 +28,13 @@
                 <label for="date" class="col-sm-2 control-label">Date</label>
 
                 <div class="col-sm-10">
-                    <input id="date" type="date" class="form-control" name="date" value="{{ $purchase->date->format('Y-m-d') }}" required>
-
+                    <div class="input-group date" >
+                        <input id="date" type="text" class="form-control datepicker" name="date" value="{{ $purchase->date->format('d/m/Y') }}" >
+                        <div class="input-group-addon">
+                            <span class="glyphicon glyphicon-th"></span>
+                        </div>
+                    </div>
+                    
                     @if ($errors->has('date'))
                         <span class="help-block">
                             <strong>{{ $errors->first('date') }}</strong>
@@ -96,6 +101,12 @@
 
 @section('scripts')
 <script type="text/javascript">
+    $('.datepicker').datepicker({
+        format: 'dd/mm/yyyy',
+    });
+
+    CKEDITOR.replace('note');
+
     function deletePurchase() {
         swal({
           title: "Are you sure?",

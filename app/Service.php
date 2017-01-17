@@ -8,6 +8,7 @@ class Service extends Model
 {
     protected $fillable = [
     	'name',
+    	'body',
     ];
 
     public function treatments()

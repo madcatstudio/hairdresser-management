@@ -21,8 +21,7 @@
 				<thead>
 					<tr>
 						<th>Name</th>
-						<th>Company</th>
-						<th>Info</th>
+						<th style="width: 80px">Company</th>
 						<th style="width: 40px">Actions</th>
 					</tr>
 				</thead>
@@ -31,7 +30,6 @@
 				<tr>
 					<th>{{ $product->name }}</th>
 					<th>{{ $product->company->name }}</th>
-					<th>{{ $product->body }}</th>
 					<th><a href="/products/{{ $product->id }}" class="btn btn-primary">View</a></th>
 				</tr>
 				@endforeach

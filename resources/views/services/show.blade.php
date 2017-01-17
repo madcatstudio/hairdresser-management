@@ -22,23 +22,24 @@
                 <!-- <p class="text-muted text-center"></p> -->
 
                 <!-- <ul class="list-group list-group-unbordered">
-                <li class="list-group-item">
-                      <b>Birthdate</b> <a class="pull-right"></a>
-                    </li>
                     <li class="list-group-item">
-                      <b>Age</b> <a class="pull-right"></a>
+                        <b>Info</b> <a class="pull-right">{{ $service->body }}</a>
                     </li>
-                    <li class="list-group-item">
-                      <b>Phone</b> <a class="pull-right"></a>
-                    </li>
-                    <li class="list-group-item">
-                      <b>Email</b> <a class="pull-right"></a>
-                    </li>
-                  </ul> -->
+                </ul> -->
 
             <!-- <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a> -->
             </div>
         <!-- /.box-body -->
+        </div>
+
+        <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Service Info</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+                {!! $service->body !!}
+            </div>
         </div>
     </div>
 
@@ -98,6 +99,20 @@
                             </div>
                         </div>
 
+                        <div class="form-group{{ $errors->has('body') ? ' has-error' : '' }}">
+                            <label for="body" class="col-sm-2 control-label">Body</label>
+
+                            <div class="col-sm-10">
+                                <textarea id="body" type="text" class="form-control" name="body" rows="10" autofocus>{{ $service->body }}</textarea>
+
+                                @if ($errors->has('body'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('body') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <div class="col-sm-10 col-sm-offset-2">
                                 <button type="submit" class="btn btn-primary">Update</button>
@@ -117,5 +132,7 @@
         $(document).ready(function() {
             $('#service-clients').DataTable();
         } );
+
+        CKEDITOR.replace('body');
     </script>
 @endsection

@@ -8,18 +8,24 @@
     <p class="text-muted text-center">n°{{ $client->number }}</p>
 
     <ul class="list-group list-group-unbordered">
+      @if(isset($client->birthdate))
       <li class="list-group-item">
         <b>Birthdate</b> <a class="pull-right">{{ $client->birthdate->format('d/m/Y') }}</a>
       </li>
       <li class="list-group-item">
         <b>Age</b> <a class="pull-right">{{ $client->birthdate->diffInYears(Carbon\Carbon::now()) }}</a>
       </li>
+      @endif
+      @if(isset($client->phone))
       <li class="list-group-item">
         <b>Phone</b> <a class="pull-right">{{ $client->phone }}</a>
       </li>
+      @endif
+      @if(isset($client->email))
       <li class="list-group-item">
         <b>Email</b> <a class="pull-right">{{ $client->email }}</a>
       </li>
+      @endif
     </ul>
 
     <a href="{{ url('/clients') }}/{{ $client->id }}/create/treatment" class="btn bg-orange btn-block"><b>Add Treatment</b></a>
@@ -63,8 +69,9 @@
     <hr> -->
 
     <strong><i class="fa fa-file-text-o margin-r-5"></i> Notes</strong>
-
-    <p>{{ $client->note }}</p>
+    <div>
+      {!! $client->note !!}
+    </div>
   </div>
   <!-- /.box-body -->
 </div>

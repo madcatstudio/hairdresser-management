@@ -30,6 +30,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <link rel="stylesheet" href="{{ asset('/plugins/datatables/dataTables.bootstrap.css') }}">
   <link rel="stylesheet" href="{{ asset('/plugins/sweetAlert/sweetalert.css') }}">
+  <link rel="stylesheet" href="{{ asset('/plugins/datepicker/datepicker3.css') }}">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -122,6 +123,10 @@ desired effect
 <script src="{{ asset('/plugins/datatables/dataTables.bootstrap.min.js') }}"></script>
 <!-- SweetAlert -->
 <script src="{{ asset('/plugins/sweetAlert/sweetalert.min.js') }}"></script>
+<!-- DatePicker -->
+<script src="{{ asset('/plugins/datepicker/bootstrap-datepicker.js') }}"></script>
+<!-- ckeditor -->
+<script src="{{ asset('/plugins/ckeditor/ckeditor.js') }}"></script>
 
 @yield('scripts')
 

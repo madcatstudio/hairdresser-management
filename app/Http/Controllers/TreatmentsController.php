@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Treatment;
 use App\Service;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Redirect;
 
 class TreatmentsController extends Controller
@@ -18,8 +19,14 @@ class TreatmentsController extends Controller
     */
     public function store(Request $request)
     {
+        if(!empty($request['date']))
+        {
+            $formattedDate = Carbon::createFromFormat('d/m/Y', $request['date'])->format('Y-m-d');
+            $request['date'] = $formattedDate;
+        }
+
         $this->validate($request, [
-            'date'=> 'required',
+            'date'=> 'required|date_format:"Y-m-d"',
             'services' => 'required',
         ]);
 
@@ -49,8 +56,14 @@ class TreatmentsController extends Controller
 
     public function update(Request $request)
     {
+        if(!empty($request['date']))
+        {
+            $formattedDate = Carbon::createFromFormat('d/m/Y', $request['date'])->format('Y-m-d');
+            $request['date'] = $formattedDate;
+        }
+
         $this->validate($request, [
-            'date'=> 'required',
+            'date'=> 'required|date_format:"Y-m-d"',
             'services' => 'required',
         ]);
 

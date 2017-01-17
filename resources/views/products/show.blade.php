@@ -15,7 +15,7 @@
         <!-- Profile Image -->
         <div class="box box-primary">
             <div class="box-body box-profile">
-                <img class="profile-user-img img-responsive img-circle" src="{{ asset('/dist/img/avatar2.png') }}" alt="User profile picture">
+                <img class="profile-user-img img-responsive img-circle" src="{{ asset('/dist/img/boxed-bg.jpg') }}" alt="User profile picture">
 
                 <h3 class="profile-username text-center">{{ $product->name }}</h3>
 
@@ -48,7 +48,7 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-                <p>{{ $product->body }}</p>
+                {!! $product->body !!}
               <!-- <strong><i class="fa fa-book margin-r-5"></i> Education</strong>
 
               <p class="text-muted">
@@ -196,5 +196,7 @@
         $(document).ready(function() {
             $('#product-clients').DataTable();
         } );
+
+        CKEDITOR.replace('body');
     </script>
 @endsection

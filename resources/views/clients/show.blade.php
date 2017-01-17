@@ -50,7 +50,7 @@
                                     @endforeach
                                     </ul>
                                 </th>
-                                <th>{{ $treatment->note }}</th>
+                                <th>{!! $treatment->note !!}</th>
                                 <th>
                                   <a href="{{ url('/treatment/edit') }}" class="btn btn-primary" 
                                      onclick="event.preventDefault();
@@ -97,7 +97,7 @@
                                     @endforeach
                                     </ul>
                                 </th>
-                                <th>{{ $purchase->note }}</th>
+                                <th>{!! $purchase->note !!}</th>
                                 <th>
                                     <a href="{{ url('/purchase/edit') }}" class="btn btn-primary" 
                                      onclick="event.preventDefault();
@@ -154,17 +154,23 @@
                 </div>
 
                 <div class="form-group{{ $errors->has('birthdate') ? ' has-error' : '' }}">
-                  <label for="birthdate" class="col-sm-2 control-label">Birthdate</label>
+                    <label for="birthdate" class="col-sm-2 control-label">Birthdate</label>
 
-                  <div class="col-sm-10">
-                      <input id="birthdate" type="date" class="form-control" name="birthdate" value="{{ $client->birthdate->format('Y-m-d') }}" >
-
-                      @if ($errors->has('birthdate'))
-                          <span class="help-block">
-                              <strong>{{ $errors->first('birthdate') }}</strong>
-                          </span>
-                      @endif
-                  </div>
+                    <div class="col-sm-10">
+                        <div class="input-group date" >
+                            <input id="birthdate" type="text" class="form-control datepicker" name="birthdate"
+                              value="@if(isset($client->birthdate)){{ $client->birthdate->format('d/m/Y')}}@endif" >
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-th"></span>
+                            </div>
+                        </div>
+                        
+                        @if ($errors->has('birthdate'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('birthdate') }}</strong>
+                            </span>
+                        @endif
+                    </div>
                 </div>
 
                 <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
@@ -274,6 +280,12 @@
       $('#client-treatments').DataTable();
       $('#client-purchases').DataTable();
   });
+
+  $('.datepicker').datepicker({
+      format: 'dd/mm/yyyy',
+  });
+
+  CKEDITOR.replace('note');
 
   function deleteClient() {
         swal({

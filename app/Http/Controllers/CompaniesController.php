@@ -56,6 +56,7 @@ class CompaniesController extends Controller
     {
         $this->validate($request, [
             'name' => 'required|max:255',
+            'url' => 'url',
         ]);
         
         $company = Company::create($request->all());
@@ -72,6 +73,10 @@ class CompaniesController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'url' => 'url',
+        ]);
 
         $form = $request->all();
 

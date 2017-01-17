@@ -15,30 +15,33 @@
         <!-- Profile Image -->
         <div class="box box-primary">
             <div class="box-body box-profile">
-                <img class="profile-user-img img-responsive img-circle" src="{{ asset('/dist/img/avatar2.png') }}" alt="User profile picture">
+                <img class="profile-user-img img-responsive img-circle" src="{{ asset('/dist/img/boxed-bg.jpg') }}" alt="User profile picture">
 
                 <h3 class="profile-username text-center">{{ $company->name }}</h3>
 
                 <!-- <p class="text-muted text-center">n°</p> -->
 
-                <!-- <ul class="list-group list-group-unbordered">
-                <li class="list-group-item">
-                      <b>Birthdate</b> <a class="pull-right"></a>
-                    </li>
+                <ul class="list-group list-group-unbordered">
+                    @if(isset($company->url))
                     <li class="list-group-item">
-                      <b>Age</b> <a class="pull-right"></a>
+                      <b>Site</b> <a href="{{ $company->url }}" class="pull-right" target="_blank">{{ $company->url }}</a>
                     </li>
-                    <li class="list-group-item">
-                      <b>Phone</b> <a class="pull-right"></a>
-                    </li>
-                    <li class="list-group-item">
-                      <b>Email</b> <a class="pull-right"></a>
-                    </li>
-                  </ul> -->
+                    @endif
+                </ul>
 
             <!-- <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a> -->
             </div>
         <!-- /.box-body -->
+        </div>
+
+        <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Company Info</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+                {!! $company->body !!}
+            </div>
         </div>
     </div>
 
@@ -100,6 +103,34 @@
                             </div>
                         </div>
 
+                        <div class="form-group{{ $errors->has('url') ? ' has-error' : '' }}">
+                            <label for="url" class="col-sm-2 control-label">Site</label>
+
+                            <div class="col-sm-10">
+                                <input id="url" type="text" class="form-control" name="url" value="{{ $company->url }}" placeholder="http://...">
+
+                                @if ($errors->has('url'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('url') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('body') ? ' has-error' : '' }}">
+                            <label for="body" class="col-sm-2 control-label">Body</label>
+
+                            <div class="col-sm-10">
+                                <textarea id="body" type="text" class="form-control" name="body" rows="10" autofocus>{{ $company->body }}</textarea>
+
+                                @if ($errors->has('body'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('body') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <div class="col-sm-10 col-sm-offset-2">
                                 <button type="submit" class="btn btn-primary">Update</button>
@@ -119,5 +150,7 @@
         $(document).ready(function() {
             $('#company-products').DataTable();
         } );
+
+        CKEDITOR.replace('body');
     </script>
 @endsection

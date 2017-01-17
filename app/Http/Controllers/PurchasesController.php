@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Purchase;
 use App\Product;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Redirect;
 
 class PurchasesController extends Controller
@@ -18,7 +19,15 @@ class PurchasesController extends Controller
     */
     public function store(Request $request)
     {
+        if(!empty($request['date']))
+        {
+            $formattedDate = Carbon::createFromFormat('d/m/Y', $request['date'])->format('Y-m-d');
+            $request['date'] = $formattedDate;
+        }
+        
+
         $this->validate($request, [
+            'date' => 'required|date_format:"Y-m-d"',
             'products' => 'required',
         ]);
 
@@ -48,8 +57,14 @@ class PurchasesController extends Controller
 
     public function update(Request $request)
     {
+        if(!empty($request['date']))
+        {
+            $formattedDate = Carbon::createFromFormat('d/m/Y', $request['date'])->format('Y-m-d');
+            $request['date'] = $formattedDate;
+        }
+
         $this->validate($request, [
-            'date'=> 'required',
+            'date'=> 'required|date_format:"Y-m-d"',
             'products' => 'required',
         ]);
 

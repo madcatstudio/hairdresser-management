@@ -7,6 +7,7 @@ use App\User;
 use App\Service;
 use App\Product;
 use App\Treatment;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -60,8 +61,15 @@ class ClientsController extends Controller
      */
     public function store(Request $request)
     {
+        if(!empty($request['birthdate']))
+        {
+            $formattedDate = Carbon::createFromFormat('d/m/Y', $request['birthdate'])->format('Y-m-d');
+            $request['birthdate'] = $formattedDate;
+        }
+
         $this->validate($request, [
             'name' => 'required|max:255',
+            'birthdate' => 'date_format:"Y-m-d"',
             'number' => 'required|unique:users,number',
             'email' => 'email|max:255|unique:users,email',
             'password' => 'required|min:6|confirmed',
@@ -83,6 +91,18 @@ class ClientsController extends Controller
     */
     public function update(Request $request, $id)
     {
+        if(!empty($request['birthdate']))
+        {
+            $formattedDate = Carbon::createFromFormat('d/m/Y', $request['birthdate'])->format('Y-m-d');
+            $request['birthdate'] = $formattedDate;
+        }
+
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'birthdate' => 'date_format:"Y-m-d"',
+            'email' => 'email|max:255',
+            'password' => 'min:6|confirmed',
+        ]);
 
         $form = $request->all();
 
@@ -112,13 +132,8 @@ class ClientsController extends Controller
         {
             array_forget($form,'note');
         }
-        if(empty($form['avatar']))
-        {
-            array_forget($form,'avatar');
-        }
 
         $client = User::findOrFail($id);
-        
         $client->update($form);
 
         // return redirect('/clients');

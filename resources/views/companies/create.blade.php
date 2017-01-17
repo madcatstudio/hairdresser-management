@@ -31,10 +31,44 @@
                 </div>
             </div>
 
+            <div class="form-group{{ $errors->has('url') ? ' has-error' : '' }}">
+                <label for="url" class="col-sm-2 control-label">Site</label>
+
+                <div class="col-sm-10">
+                    <input id="url" type="text" class="form-control" name="url" value="{{ old('url') }}" placeholder="http://..." autofocus>
+
+                    @if ($errors->has('url'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('url') }}</strong>
+                        </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="form-group{{ $errors->has('body') ? ' has-error' : '' }}">
+                <label for="body" class="col-sm-2 control-label">Body</label>
+
+                <div class="col-sm-10">
+                    <textarea id="body" type="text" class="form-control" name="body" rows="10" autofocus>{{ old('body') }}</textarea>
+
+                    @if ($errors->has('body'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('body') }}</strong>
+                        </span>
+                    @endif
+                </div>
+            </div>
+
         </div>
         <div class="box-footer">
         	<button type="submit" class="btn btn-primary">Insert</button>
         </div>
     </form>
 </div>
+@endsection
+
+@section('scripts')
+    <script>
+        CKEDITOR.replace('body');
+    </script>
 @endsection
