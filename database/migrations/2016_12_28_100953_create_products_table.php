@@ -18,8 +18,8 @@ class CreateProductsTable extends Migration
             $table->integer('company_id')->unsigned();
             $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');
             $table->string('name');
-            $table->text('body')->nullable;
-            $table->string('avatar')->nullable;
+            $table->text('body')->nullable();
+            $table->string('avatar')->nullable();
             $table->timestamps();
         });
     }
