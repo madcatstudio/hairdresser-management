@@ -18,7 +18,6 @@ class DatabaseSeeder extends Seeder
             'email' => 'thebas81@gmail.com',
             'birthdate' => '1981-08-04',
             'note' => 'Amministratore del sito',
-           	'avatar' => 'avatar04.png',
             'password' => bcrypt('password'),
             'remember_token' => str_random(10),
     	));
