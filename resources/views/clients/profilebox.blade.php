@@ -1,7 +1,7 @@
 <!-- Profile Image -->
 <div class="box box-primary">
   <div class="box-body box-profile">
-    <img class="profile-user-img img-responsive img-circle" src="{{ asset('/dist/img') }}/{{ $client->avatar }}" alt="User profile picture">
+    <!-- <img class="profile-user-img img-responsive img-circle" src="{{ asset('/dist/img') }}/{{ $client->avatar }}" alt="User profile picture"> -->
 
     <h3 class="profile-username text-center">{{ $client->name }}</h3>
 
