@@ -32,7 +32,9 @@
 					<th>{{ $client->name }}</th>
 					<th>{{ $client->created_at->format('d/m/Y') }}</th>
 					<th>{{ $client->number }}</th>
-					<th><a href="/clients/{{ $client->id }}" class="btn btn-primary">View</a></th>
+					<th>
+						<a href="/clients/{{ $client->id }}" class="btn btn-primary">View</a>
+					</th>
 				</tr>
 				@endforeach
 				</tbody>
@@ -46,5 +48,21 @@
 		$(document).ready(function() {
 		    $('#client-index').DataTable();
 		} );
+
+		function deleteClient($id) {
+        swal({
+          title: "Are you sure?",
+          text: "You will not be able to recover this Client.",
+          type: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#DD6B55",
+          confirmButtonText: "Yes, delete it!",
+          closeOnConfirm: false
+        },
+        function(){
+            document.getElementById('delete-client').submit();
+            // swal("Deleted!", "The Treatment has been deleted.", "success");
+        });
+    }
 	</script>
 @endsection
