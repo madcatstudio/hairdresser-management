@@ -31,7 +31,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="{{ asset('/dist/css/custom.css') }}">
 
   <link rel="stylesheet" href="{{ asset('/plugins/datatables/dataTables.bootstrap.css') }}">
-  <link rel="stylesheet" href="{{ asset('/plugins/sweetalert/sweetalert.css') }}">
+  <link rel="stylesheet" href="{{ asset('/plugins/sweetAlert/sweetalert.css') }}">
 
   <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Kalam" rel="stylesheet">
 
