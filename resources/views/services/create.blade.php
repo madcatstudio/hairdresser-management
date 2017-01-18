@@ -3,6 +3,10 @@
 @section('page-title', 'Insert a Service')
 @section('page-description', 'Fill all the information about the new Service')
 
+@section('breadcrumb')
+    <li class="active">Services</li>
+@endsection
+
 @section('content')
 <div class="box box-primary">
     <div class="box-header">

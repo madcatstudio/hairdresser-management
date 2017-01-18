@@ -3,6 +3,10 @@
 @section('page-title', 'Insert a Product')
 @section('page-description', 'Fill all the information about the new Product')
 
+@section('breadcrumb')
+    <li class="active">Products</li>
+@endsection
+
 @section('content')
 <div class="box box-primary">
     <div class="box-header">
