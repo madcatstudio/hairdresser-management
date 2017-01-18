@@ -30,16 +30,16 @@
 
     @if($services_count>0)
       <a href="{{ url('/clients') }}/{{ $client->id }}/create/treatment"
-      class="btn bg-orange btn-block"><b>Add Treatment</b></a>
+      class="btn bg-orange btn-block"><b>{{ trans('strings.add') }} {{ trans_choice('sections.treatments', 1) }}</b></a>
     @else
-      <a class="btn bg-orange btn-block" disabled><b>Add Treatment</b></a>
+      <a class="btn bg-orange btn-block" disabled><b>{{ trans('strings.add') }} {{ trans_choice('sections.treatments', 1) }}</b></a>
     @endif
 
     @if($products_count>0)
       <a href="{{ url('/clients') }}/{{ $client->id }}/create/purchase"
-      class="btn bg-maroon btn-block"><b>Add Purchase</b></a>
+      class="btn bg-maroon btn-block"><b>{{ trans('strings.add') }} {{ trans_choice('sections.products', 1) }}</b></a>
     @else
-      <a class="btn bg-maroon btn-block" disabled><b>Add Purchase</b></a>
+      <a class="btn bg-maroon btn-block" disabled><b>{{ trans('strings.add') }} {{ trans_choice('sections.products', 1) }}</b></a>
     @endif
 
   </div>

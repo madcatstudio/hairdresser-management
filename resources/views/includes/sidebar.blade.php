@@ -20,52 +20,52 @@
       <ul class="sidebar-menu">
         <li class="header">MENU</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="{{ isActiveRoute('dashboard') }}"><a href="{{ route('dashboard') }}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+        <li class="{{ isActiveRoute('dashboard') }}"><a href="{{ route('dashboard') }}"><i class="fa fa-dashboard"></i> <span>{{ trans('sections.dashboard') }}</span></a></li>
         <li class="treeview {{ areActiveRoutes(['clients', 'clients-create']) }}">
-          <a href="#"><i class="fa fa-users"></i> <span>Clients</span>
+          <a href="#"><i class="fa fa-users"></i> <span>{{ trans_choice('sections.clients', 2) }}</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu" aria-expanded="true">
-            <li class="{{ isActiveRoute('clients') }}"><a href="{{ route('clients') }}"><i class="fa fa-list-ul"></i> List</a></li>
-            <li class="{{ isActiveRoute('clients-create') }}"><a href="{{ route('clients-create') }}"><i class="fa fa-plus-circle"></i> Add</a></li>
+            <li class="{{ isActiveRoute('clients') }}"><a href="{{ route('clients') }}"><i class="fa fa-list-ul"></i> {{ trans('strings.list') }}</a></li>
+            <li class="{{ isActiveRoute('clients-create') }}"><a href="{{ route('clients-create') }}"><i class="fa fa-plus-circle"></i> {{ trans('strings.add') }}</a></li>
           </ul>
         </li>
 
         <li class="treeview {{ areActiveRoutes(['services', 'services-create']) }}">
-          <a href="#"><i class="fa fa-scissors"></i> <span>Services</span>
+          <a href="#"><i class="fa fa-scissors"></i> <span>{{ trans_choice('sections.services', 2) }}</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu" aria-expanded="true">
-            <li class="{{ isActiveRoute('services') }}"><a href="{{ route('services') }}"><i class="fa fa-list-ul"></i> List</a></li>
-            <li class="{{ isActiveRoute('services-create') }}"><a href="{{ route('services-create') }}"><i class="fa fa-plus-circle"></i> Add</a></li>
+            <li class="{{ isActiveRoute('services') }}"><a href="{{ route('services') }}"><i class="fa fa-list-ul"></i> {{ trans('strings.list') }}</a></li>
+            <li class="{{ isActiveRoute('services-create') }}"><a href="{{ route('services-create') }}"><i class="fa fa-plus-circle"></i> {{ trans('strings.add') }}</a></li>
           </ul>
         </li>
 
         <li class="treeview {{ areActiveRoutes(['companies', 'companies-create']) }}">
-          <a href="#"><i class="fa fa-industry"></i> <span>Companies</span>
+          <a href="#"><i class="fa fa-industry"></i> <span>{{ trans_choice('sections.companies', 2) }}</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu" aria-expanded="true">
-            <li class="{{ isActiveRoute('companies') }}"><a href="{{ route('companies') }}"><i class="fa fa-list-ul"></i> List</a></li>
-            <li class="{{ isActiveRoute('companies-create') }}"><a href="{{ route('companies-create') }}"><i class="fa fa-plus-circle"></i> Add</a></li>
+            <li class="{{ isActiveRoute('companies') }}"><a href="{{ route('companies') }}"><i class="fa fa-list-ul"></i> {{ trans('strings.list') }}</a></li>
+            <li class="{{ isActiveRoute('companies-create') }}"><a href="{{ route('companies-create') }}"><i class="fa fa-plus-circle"></i> {{ trans('strings.add') }}</a></li>
           </ul>
         </li>
 
         <li class="treeview {{ areActiveRoutes(['products', 'products-create']) }}">
-          <a href="#"><i class="fa fa-shopping-cart"></i> <span>Products</span>
+          <a href="#"><i class="fa fa-shopping-cart"></i> <span>{{ trans_choice('sections.products', 2) }}</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu" aria-expanded="true">
-            <li class="{{ isActiveRoute('products') }}"><a href="{{ route('products') }}"><i class="fa fa-list-ul"></i> List</a></li>
-            <li class="{{ isActiveRoute('products-create') }}"><a href="{{ route('products-create') }}"><i class="fa fa-plus-circle"></i> Add</a></li>
+            <li class="{{ isActiveRoute('products') }}"><a href="{{ route('products') }}"><i class="fa fa-list-ul"></i> {{ trans('strings.list') }}</a></li>
+            <li class="{{ isActiveRoute('products-create') }}"><a href="{{ route('products-create') }}"><i class="fa fa-plus-circle"></i> {{ trans('strings.add') }}</a></li>
           </ul>
         </li>
       </ul>

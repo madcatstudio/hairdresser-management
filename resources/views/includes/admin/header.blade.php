@@ -123,7 +123,7 @@
 
                 <p>
                   {{ Auth::User()->name }} ({{ Auth::user()->number }})
-                  <small>Member since {{ Auth::User()->created_at->format('d/m/Y') }}</small>
+                  <small>{{ trans('strings.membersince') }} {{ Auth::User()->created_at->format('d/m/Y') }}</small>
                 </p>
               </li>
               <!-- Menu Body -->
@@ -144,13 +144,13 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="{{ url('/clients') }}/{{ Auth::User()->id }}" class="btn btn-default btn-flat">Profile</a>
+                  <a href="{{ url('/clients') }}/{{ Auth::User()->id }}" class="btn btn-default btn-flat">{{ trans('strings.profile') }}</a>
                 </div>
                 <div class="pull-right">
                   <a href="{{ url('/logout') }}" class="btn btn-default btn-flat" 
                      onclick="event.preventDefault();
                      document.getElementById('logout-form').submit();">
-                     Sign out
+                     {{ trans('strings.signout') }}
                   </a>
 
                   <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">

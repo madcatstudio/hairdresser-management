@@ -19,8 +19,8 @@
     <div class="col-md-9">
         <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
-              <li class="active"><a href="#treatments" data-toggle="tab">Treatments</a></li>
-              <li><a href="#purchases" data-toggle="tab">Purchases</a></li>
+              <li class="active"><a href="#treatments" data-toggle="tab">{{ trans_choice('sections.treatments', 2) }}</a></li>
+              <li><a href="#purchases" data-toggle="tab">{{ trans_choice('sections.purchases', 2) }}</a></li>
               <li><a href="#settings" data-toggle="tab">Settings</a></li>
           </ul>
         <div class="tab-content">
@@ -34,7 +34,7 @@
                             <thead>
                                 <tr>
                                     <th style="width: 60px">Date</th>
-                                    <th>Services</th>
+                                    <th>{{ trans_choice('sections.services', 2) }}</th>
                                     <th>Notes</th>
                                     <th style="width: 40px">Actions</th>
                                 </tr>
@@ -71,9 +71,9 @@
                     <div class="box-footer">
                       @if($services_count>0)
                         <a href="{{ url('/clients') }}/{{ $client->id }}/create/treatment"
-                        class="btn bg-orange btn-block"><b>Add Treatment</b></a>
+                        class="btn bg-orange btn-block"><b>{{ trans('strings.add') }} {{ trans_choice('sections.treatments', 1) }}</b></a>
                       @else
-                        <a class="btn bg-orange btn-block" disabled><b>Add Treatment</b></a>
+                        <a class="btn bg-orange btn-block" disabled><b>{{ trans('strings.add') }} {{ trans_choice('sections.treatments', 1) }}</b></a>
                       @endif
                     </div>
                 </div>
@@ -86,7 +86,7 @@
                             <thead>
                                 <tr>
                                     <th style="width: 60px">Date</th>
-                                    <th>Products</th>
+                                    <th>{{ trans_choice('sections.products', 2) }}</th>
                                     <th>Notes</th>
                                     <th style="width: 40px">Actions</th>
                                 </tr>
@@ -123,9 +123,9 @@
                     <div class="box-footer">
                       @if($products_count>0)
                         <a href="{{ url('/clients') }}/{{ $client->id }}/create/purchase"
-                        class="btn bg-maroon btn-block"><b>Add Purchase</b></a>
+                        class="btn bg-maroon btn-block"><b>{{ trans('strings.add') }} {{ trans_choice('sections.products', 1) }}</b></a>
                       @else
-                        <a class="btn bg-maroon btn-block" disabled><b>Add Purchase</b></a>
+                        <a class="btn bg-maroon btn-block" disabled><b>{{ trans('strings.add') }} {{ trans_choice('sections.products', 1) }}</b></a>
                       @endif
                     </div>
                 </div>
