@@ -15,7 +15,6 @@
             <div class="box-body box-profile">
                 <!-- <img class="profile-user-img img-responsive img-circle" src="{{ asset('/dist/img') }}/{{ Auth::User()->avatar }}" alt="User profile picture"> -->
 
-
                 <h1 class="text-center">{{ Auth::user()->name }}</h1>
 
                 <p class="text-muted text-center">n°{{ Auth::user()->number }}</p>
