@@ -144,8 +144,6 @@ class ClientsController extends Controller
         // {
         //     array_forget($form,'note');
         // }
-        
-        
 
         $client = User::findOrFail($id);
         $client->update($form);
