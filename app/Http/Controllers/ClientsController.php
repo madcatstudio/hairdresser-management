@@ -140,10 +140,10 @@ class ClientsController extends Controller
         {
             array_forget($form,'email');
         }
-        if(empty($form['note']))
-        {
-            array_forget($form,'note');
-        }
+        // if(empty($form['note']))
+        // {
+        //     array_forget($form,'note');
+        // }
 
         $client = User::findOrFail($id);
         $client->update($form);

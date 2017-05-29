@@ -26,19 +26,38 @@
                     <li class="list-group-item">
                       <b>Age</b> <span class="pull-right">{{ Auth::user()->birthdate->diffInYears(Carbon\Carbon::now()) }}</span>
                     </li>
-                    <li class="list-group-item">
-                      <b>Phone</b> <span class="pull-right">{{ Auth::user()->phone }}</span>
-                    </li>
-                    <li class="list-group-item">
-                      <b>Email</b> <span class="pull-right">{{ Auth::user()->email }}</span>
-                    </li>
-              </ul>
+                    {{--<li class="list-group-item">--}}
+                      {{--<b>Phone</b> <span class="pull-right">{{ Auth::user()->phone }}</span>--}}
+                    {{--</li>--}}
+                    {{--<li class="list-group-item">--}}
+                      {{--<b>Email</b> <span class="pull-right">{{ Auth::user()->email }}</span>--}}
+                    {{--</li>--}}
+
+                </ul>
             </div>
             <!-- /.box-body -->
         </div>
         <!-- /.box -->
     </div>
 </div>
+
+<!-- Promotions -->
+<!-- <div class="row">
+    <div class="col-md-12">
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h3>Festa della Mamma 2017</h3>
+            </div>
+            <div class="box-body">
+                <img src="img/festa-mamma-2017.png" class="image center-block">
+                <h2 class="text-center">Fino al 15 maggio vieni a ritirare il tuo regalo.</h2>
+                <h3 class="text-center">Pacchetto Mamma e Figlia, 2 pieghe con in omaggio per entrambe un Servizio di Ricostruzione Capillare!</h3>
+                <h3 class="text-center">Costo pacchetto € 40 anzichè € 80</h3>
+            </div>
+        </div>
+    </div>
+</div> -->
+
 
 <div class="row">
     <div class="col-md-12">
@@ -99,7 +118,9 @@
                             <div>
                                 <ul>
                                 @foreach($purchase->products as $product)
-                                    <li>{{ $product->name }} <small>{{ $product->company->name }}</small></li>
+                                    <li>{{ $product->name }} <small>{{ $product->company->name }}</small><br/>
+                                        {!! $product->body !!}
+                                    </li>
                                 @endforeach
                                 </ul>
                             </div>
