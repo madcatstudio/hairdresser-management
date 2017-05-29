@@ -135,6 +135,10 @@
                 <!-- Menu Footer-->
                 <li class="user-footer">
 
+                <div class="pull-left">
+                  <a href="{{ url('/admin') }}" class="btn btn-primary btn-flat">Admin Dashboard</a>
+                </div>
+
                   <div class="pull-right">
                     <a href="{{ url('/logout') }}" class="btn btn-default btn-flat" 
                       onclick="event.preventDefault();

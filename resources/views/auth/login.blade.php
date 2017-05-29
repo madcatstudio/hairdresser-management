@@ -54,7 +54,8 @@
     <form action="{{ url('/login') }}" method="post">
         {{ csrf_field() }}
         <div class="form-group has-feedback">
-            <input id="number"  class="form-control" name="number" type="text" placeholder="Client Number" value="{{ old('number') }}" required autofocus>
+        <label>Client Number</label>
+            <input id="number"  class="form-control" name="number" type="text" value="{{ old('number') }}" required autofocus>
             <span class="glyphicon glyphicon-user form-control-feedback"></span>
 
             @if ($errors->has('number'))
@@ -64,7 +65,8 @@
             @endif
         </div>
       <div class="form-group has-feedback">
-        <input id="password" name="password" type="password" class="form-control" placeholder="Password" required>
+      <label>Password</label>
+        <input id="password" name="password" type="password" class="form-control" required>
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
         @if ($errors->has('password'))
             <span class="help-block">
@@ -76,7 +78,7 @@
         <div class="col-xs-8">
           <div class="checkbox icheck">
             <label>
-              <input type="checkbox"> Remember Me
+              <input checked="checked" name="remember" type="checkbox" id="remember">  Remember Me
             </label>
           </div>
         </div>
