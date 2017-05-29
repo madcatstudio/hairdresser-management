@@ -14,7 +14,6 @@
         <div class="box box-primary">
             <div class="box-body box-profile">
                 <!-- <img class="profile-user-img img-responsive img-circle" src="{{ asset('/dist/img') }}/{{ Auth::User()->avatar }}" alt="User profile picture"> -->
-                
 
                 <h1 class="text-center">{{ Auth::user()->name }}</h1>
 
@@ -27,12 +26,12 @@
                     <li class="list-group-item">
                       <b>Age</b> <span class="pull-right">{{ Auth::user()->birthdate->diffInYears(Carbon\Carbon::now()) }}</span>
                     </li>
-                    {{--<li class="list-group-item">--}}
-                      {{--<b>Phone</b> <span class="pull-right">{{ Auth::user()->phone }}</span>--}}
-                    {{--</li>--}}
-                    {{--<li class="list-group-item">--}}
-                      {{--<b>Email</b> <span class="pull-right">{{ Auth::user()->email }}</span>--}}
-                    {{--</li>--}}
+                    <!-- <li class="list-group-item">
+                      <b>Phone</b> <span class="pull-right">{{ Auth::user()->phone }}</span>
+                    </li>
+                    <li class="list-group-item">
+                      <b>Email</b> <span class="pull-right">{{ Auth::user()->email }}</span>
+                    </li> -->
 
                 </ul>
             </div>
