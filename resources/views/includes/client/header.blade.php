@@ -144,7 +144,7 @@
                   <div class="pull-right">
                     <a href="{{ url('/logout') }}" class="btn btn-default btn-flat" 
                       onclick="event.preventDefault();
-                      document.getElementBaasdyId('logout-form').submit();">
+                      document.getElementById('logout-form').submit();">
                       Sign out
                     </a>
 
