@@ -135,14 +135,16 @@
                 <!-- Menu Footer-->
                 <li class="user-footer">
 
-                <div class="pull-left">
-                  <a href="{{ url('/admin') }}" class="btn btn-primary btn-flat">Admin Dashboard</a>
-                </div>
+                  @if ( Auth::User()->isAdmin() )
+                  <div class="pull-left">
+                    <a href="{{ url('/admin') }}" class="btn btn-primary btn-flat">Admin Dashboard</a>
+                  </div>
+                  @endif
 
                   <div class="pull-right">
                     <a href="{{ url('/logout') }}" class="btn btn-default btn-flat" 
                       onclick="event.preventDefault();
-                      document.getElementById('logout-form').submit();">
+                      document.getElementBaasdyId('logout-form').submit();">
                       Sign out
                     </a>
 
