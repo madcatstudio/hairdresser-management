@@ -91,7 +91,7 @@ class ClientsController extends Controller
         
         $user = User::create($request->all());
 
-        return redirect('/clients'); 
+        return redirect('/clients/'.$user->id);
         
     }
 

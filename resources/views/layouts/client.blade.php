@@ -26,7 +26,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         page. However, you can choose any other skin. Make sure you
         apply the skin class to the body tag so the changes take effect.
   -->
-  <link rel="stylesheet" href="{{ asset('/dist/css/skins/skin-yellow-light.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('/dist/css/skins/skin-black.min.css') }}">
 
   <link rel="stylesheet" href="{{ asset('/dist/css/custom.css') }}">
 
@@ -70,7 +70,7 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="hold-transition skin-yellow-light layout-top-nav">
+<body class="hold-transition skin-black layout-top-nav">
 <div class="wrapper">
 
   @include('includes.client.header')
