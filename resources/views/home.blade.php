@@ -46,14 +46,18 @@
     <div class="col-md-12">
         <div class="box box-primary">
             <div class="box-header with-border">
-                <h3>Chiusura per corsi di aggiornamento</h3>
+                <h3>Black Friday</h3>
             </div>
             <div class="box-body">
-                <img src="img/chiusura-trainer-davines.png" class="image center-block">
+                <img src="img/black-friday-2017.png" class="image center-block">
                 {{-- <h2 class="text-center">Fino al 15 maggio vieni a ritirare il tuo regalo.</h2> --}}
-                <h3 class="text-center">Per corsi di aggiornamento rimarremo chiusi da martedi 11 a venerdi 14 luglio e da martedi 22 a venerdi 25 agosto</h3>
-                <h3 class="text-center">Sarà possibile prendere appuntamenti tramite messaggio al numero 3923849388, vi risponderemo o verrete ricontattati il prima possibile!</h3>
-                <h3 class="text-center">Grazie mille e scusateci del disagio</h3>
+                <h2 class="text-center">Dal 14 al 25 Novembre</h2>
+                <h3 class="text-center">concediti una Piega e con soli 10 euro (anzichè 20) potrai scegliere tra uno dei seguenti servizi:</h3>
+                <ul>
+                    <li>applicazione smalto semipermanente</li>
+                    <li>trattamento ricostruzione capillare</li>
+                    <li>trattamento New shine</li>
+                </ul>
             </div>
         </div>
     </div>
