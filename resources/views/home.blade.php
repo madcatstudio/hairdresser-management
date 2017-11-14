@@ -53,7 +53,7 @@
                 {{-- <h2 class="text-center">Fino al 15 maggio vieni a ritirare il tuo regalo.</h2> --}}
                 <h2 class="text-center">Dal 14 al 25 Novembre</h2>
                 <h3 class="text-center">concediti una Piega e con soli 10 euro (anzichè 20) potrai scegliere tra uno dei seguenti servizi:</h3>
-                <ul>
+                <ul class="text-center">
                     <li>applicazione smalto semipermanente</li>
                     <li>trattamento ricostruzione capillare</li>
                     <li>trattamento New shine</li>
