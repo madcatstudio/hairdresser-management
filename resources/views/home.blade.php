@@ -42,7 +42,7 @@
 </div>
 
 <!-- Promotions -->
-<div class="row">
+{{-- <div class="row">
     <div class="col-md-12">
         <div class="box box-primary">
             <div class="box-header with-border">
@@ -50,7 +50,7 @@
             </div>
             <div class="box-body">
                 <img src="img/black-friday-2017.png" class="image center-block">
-                {{-- <h2 class="text-center">Fino al 15 maggio vieni a ritirare il tuo regalo.</h2> --}}
+                <h2 class="text-center">Fino al 15 maggio vieni a ritirare il tuo regalo.</h2>
                 <h2 class="text-center">Dal 14 al 25 Novembre</h2>
                 <h3 class="text-center">concediti una Piega e con soli 10 euro (anzichè 20) potrai scegliere tra uno dei seguenti servizi:</h3>
                 <h3 class="text-center">
@@ -61,7 +61,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 
 
 <div class="row">
